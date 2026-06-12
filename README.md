@@ -54,6 +54,22 @@ Walker style, a themed `hyprlock` lock screen, a gradient active‑window border
 with red groupbar (`hyprland.conf`), Cava, Steam and VS Code (built‑in *Red*)
 theming, and a Plymouth/SDDM boot logo (`unlock.png`).
 
+## Optional: Monster fastfetch
+
+A matching `fastfetch` config (Monster ASCII wordmark + blood‑red palette,
+keeping all the Omarchy system info) lives in `extras/fastfetch/`. To use it:
+
+```bash
+# Back up your current fastfetch config first
+cp ~/.config/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc.bak
+
+# Apply the Monster fastfetch
+cp ~/.config/omarchy/themes/monster/extras/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
+```
+
+The logo path points at the installed theme folder, so it works as long as the
+Monster theme is installed.
+
 ## Recommended bar
 
 This theme is used with **Quickshell Rise** — a modern Quickshell bar for Omarchy
