@@ -25,63 +25,82 @@ Then pick **Monster** from the theme menu, or:
 omarchy theme set Monster
 ```
 
-To use the boot splash (Plymouth) and SDDM login logo, go to **Style → Unlock → Monster**.
+## What applies automatically vs. manually
 
-## Optional: custom lock screen layout
+When you run `omarchy theme set Monster`, these apply **automatically**:
 
-The theme already colors the default `hyprlock` to the Monster palette. If you
-also want the **custom lock screen layout** (single‑line clock, greeting, rotating
-phrase, blood‑red lock icon), copy the bundled layout over your personal
-`hyprlock.conf` — it pulls colors from whatever Omarchy theme is active, so it
-stays in sync:
+- Terminals (Alacritty, Ghostty, Kitty, Foot, Warp), Waybar, **Walker** (custom
+  icon‑free launcher), Mako, GTK, btop, SwayOSD, Wofi, Vencord, Neovim
+- A gradient active‑window border + red groupbar (`hyprland.conf`)
+- The default `hyprlock` lock screen, recolored to the Monster palette
+- **Cava**, **Steam**, and **VS Code** (built‑in *Red* theme)
+- The wallpapers in `backgrounds/` (the Obluda wallpaper loads as default)
+
+The **boot splash / login logo** (Plymouth + SDDM) is one extra menu step:
+go to **Style → Unlock → Monster**.
+
+The items in [Extras](#extras--install-manually) below are **opt‑in** — they live
+in `extras/` and only take effect when you copy them into `~/.config/` yourself.
+
+## Extras — install manually
+
+These are not part of Omarchy's theme system, so the theme can't apply them for
+you. Each command backs up your current file first, then drops in the Monster
+version. Skip any you don't want.
+
+### Custom lock screen layout (hyprlock)
+
+The theme already colors the default `hyprlock`. This replaces the **layout** too
+(single‑line clock, greeting, rotating phrase, blood‑red lock icon). It pulls its
+colors from whatever Omarchy theme is active, so it stays in sync.
 
 ```bash
-# Back up your current lock screen first
 cp ~/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf.bak
-
-# Apply the Monster layout
 cp ~/.config/omarchy/themes/monster/extras/hyprlock.conf ~/.config/hypr/hyprlock.conf
 ```
 
 The greeting uses `$USER`, so it adapts to your name automatically. The rotating
-phrases are in Portuguese — edit the `shuf -e ...` line in the file to change them.
+phrases are in Portuguese — edit the `shuf -e ...` line to change them.
 
-## What's themed
+### Shell prompt (Starship)
 
-`colors.toml` drives terminals (Alacritty, Ghostty, Kitty, Foot, Warp), Waybar,
-Walker, Mako, GTK, btop, SwayOSD, Wofi, Vencord and Neovim. Includes a custom
-Walker style, a themed `hyprlock` lock screen, a gradient active‑window border
-with red groupbar (`hyprland.conf`), Cava, Steam and VS Code (built‑in *Red*)
-theming, and a Plymouth/SDDM boot logo (`unlock.png`).
-
-## Optional: Monster shell prompt (Starship)
-
-A Monster palette for the Omarchy Starship prompt — the powerline segments fade
-from blood red (user) down to shadow (clock). It's in `extras/starship.toml`:
+Powerline segments that fade from blood red (user) down to shadow (clock).
 
 ```bash
-# Back up your current prompt first
 cp ~/.config/starship.toml ~/.config/starship.toml.bak
-
-# Apply the Monster prompt
 cp ~/.config/omarchy/themes/monster/extras/starship.toml ~/.config/starship.toml
 ```
 
-## Optional: Monster fastfetch
+Open a new terminal to see it.
 
-A matching `fastfetch` config (Monster ASCII wordmark + blood‑red palette,
-keeping all the Omarchy system info) lives in `extras/fastfetch/`. To use it:
+### System info (fastfetch)
+
+A Monster ASCII wordmark + blood‑red palette, keeping all the Omarchy system info.
 
 ```bash
-# Back up your current fastfetch config first
 cp ~/.config/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc.bak
-
-# Apply the Monster fastfetch
 cp ~/.config/omarchy/themes/monster/extras/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 ```
 
 The logo path points at the installed theme folder, so it works as long as the
 Monster theme is installed.
+
+## Updating
+
+To pull the latest version of the theme after new changes are pushed:
+
+```bash
+omarchy theme update     # git pulls every git-installed theme
+omarchy theme set Monster
+```
+
+> `omarchy theme update` runs `git pull` on the theme folder, so don't edit files
+> inside `~/.config/omarchy/themes/monster/` directly — your changes would block
+> the pull. Tweak copies in `~/.config/` instead.
+
+**The extras don't auto‑update.** If an extra (hyprlock, starship, fastfetch)
+changed upstream and you want the new version, re‑run its `cp` command from
+[Extras](#extras--install-manually) after updating.
 
 ## Recommended bar
 
