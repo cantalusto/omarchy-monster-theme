@@ -2,7 +2,7 @@
 
 A dark, noir [Omarchy](https://omarchy.org/) theme inspired by the anime **Monster** (Naoki Urasawa) — desaturated shadows with a blood‑red accent.
 
-![preview](preview.png)
+![Monster theme in action — btop, fastfetch and cliamp over the Obluda wallpaper](showcase.png)
 
 ## Palette
 
