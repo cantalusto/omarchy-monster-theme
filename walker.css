@@ -2,20 +2,92 @@
 @define-color text #cdc3b4;
 @define-color base #15110f;
 @define-color border #4d4239;
+@define-color blood #9e1b1b;
 @define-color foreground #cdc3b4;
 @define-color background #15110f;
 
-/* Toque sutil: mantém o layout limpo padrão, só arredonda os cantos. */
+/* Walker do tema Monster — caixa escura limpa, sem ícones, com a assinatura
+   da "linha de sangue" sob a busca e um brilho vermelho no item selecionado. */
 
-box.box-wrapper {
-  border-radius: 14px;
+window * {
+    all: unset;
+    color: @text;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    font-size: 14px;
 }
 
-.item-box {
-  border-radius: 8px;
-  margin: 1px 4px;
+/* Sem ícones, visual limpo */
+window .normal-icons,
+window .large-icons,
+window .item-image,
+window .symbols {
+    -gtk-icon-size: 0px;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    display: none;
 }
 
+window .box-wrapper {
+    background: alpha(@base, 0.97);
+    border: 1px solid alpha(@border, 0.35);
+    border-radius: 10px;
+    padding: 4px;
+    margin: 0;
+    box-shadow: 0 6px 22px alpha(black, 0.8);
+}
+
+/* Busca com a "linha de sangue" Monster como divisória */
+window .search-container {
+    border-bottom: 2px solid alpha(@blood, 0.85);
+    border-radius: 0px;
+    padding: 4px 8px 6px 8px;
+    margin: 0 2px 4px 2px;
+    background: transparent;
+}
+
+window .input {
+    background: transparent;
+    color: @text;
+}
+
+window .input placeholder {
+    opacity: 0.45;
+}
+
+window .list {
+    padding: 2px;
+}
+
+window .item-box {
+    border-radius: 6px;
+    padding: 5px 12px;
+    margin: 1px 2px;
+}
+
+window .item-text-box {
+    padding: 5px 0;
+}
+
+/* Item selecionado: brilho vermelho translúcido + texto sangue */
 child:selected .item-box {
-  border-radius: 8px;
+    background: alpha(@blood, 0.14);
+}
+
+child:selected .item-box * {
+    color: @selected-text;
+}
+
+window .preview {
+    border: 1px solid alpha(@border, 0.35);
+    border-radius: 10px;
+    background: alpha(@base, 0.6);
+    color: @text;
+    padding: 12px;
+    margin: 10px 0;
 }
