@@ -27,12 +27,32 @@ omarchy theme set Monster
 
 To use the boot splash (Plymouth) and SDDM login logo, go to **Style → Unlock → Monster**.
 
+## Optional: custom lock screen layout
+
+The theme already colors the default `hyprlock` to the Monster palette. If you
+also want the **custom lock screen layout** (single‑line clock, greeting, rotating
+phrase, blood‑red lock icon), copy the bundled layout over your personal
+`hyprlock.conf` — it pulls colors from whatever Omarchy theme is active, so it
+stays in sync:
+
+```bash
+# Back up your current lock screen first
+cp ~/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf.bak
+
+# Apply the Monster layout
+cp ~/.config/omarchy/themes/monster/extras/hyprlock.conf ~/.config/hypr/hyprlock.conf
+```
+
+The greeting uses `$USER`, so it adapts to your name automatically. The rotating
+phrases are in Portuguese — edit the `shuf -e ...` line in the file to change them.
+
 ## What's themed
 
 `colors.toml` drives terminals (Alacritty, Ghostty, Kitty, Foot, Warp), Waybar,
 Walker, Mako, GTK, btop, SwayOSD, Wofi, Vencord and Neovim. Includes a custom
-Walker style, a themed `hyprlock` lock screen, a red active‑window border
-(`hyprland.conf`), and a Plymouth/SDDM boot logo (`unlock.png`).
+Walker style, a themed `hyprlock` lock screen, a gradient active‑window border
+with red groupbar (`hyprland.conf`), Cava, Steam and VS Code (built‑in *Red*)
+theming, and a Plymouth/SDDM boot logo (`unlock.png`).
 
 ## Wallpapers & credits
 
