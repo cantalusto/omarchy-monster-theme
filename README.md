@@ -54,6 +54,19 @@ Walker style, a themed `hyprlock` lock screen, a gradient active‑window border
 with red groupbar (`hyprland.conf`), Cava, Steam and VS Code (built‑in *Red*)
 theming, and a Plymouth/SDDM boot logo (`unlock.png`).
 
+## Optional: Monster shell prompt (Starship)
+
+A Monster palette for the Omarchy Starship prompt — the powerline segments fade
+from blood red (user) down to shadow (clock). It's in `extras/starship.toml`:
+
+```bash
+# Back up your current prompt first
+cp ~/.config/starship.toml ~/.config/starship.toml.bak
+
+# Apply the Monster prompt
+cp ~/.config/omarchy/themes/monster/extras/starship.toml ~/.config/starship.toml
+```
+
 ## Optional: Monster fastfetch
 
 A matching `fastfetch` config (Monster ASCII wordmark + blood‑red palette,
