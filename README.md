@@ -54,6 +54,16 @@ Walker style, a themed `hyprlock` lock screen, a gradient active‑window border
 with red groupbar (`hyprland.conf`), Cava, Steam and VS Code (built‑in *Red*)
 theming, and a Plymouth/SDDM boot logo (`unlock.png`).
 
+## Recommended bar
+
+This theme is used with **Quickshell Rise** — a modern Quickshell bar for Omarchy
+by [HANCORE-linux](https://github.com/HANCORE-linux), not Waybar. It is **not**
+bundled here; install it separately from its own repo:
+
+➡️ https://github.com/HANCORE-linux/quickshell-dots
+
+All credit for the bar goes to its author.
+
 ## Wallpapers & credits
 
 The `backgrounds/` folder bundles fan wallpapers of the anime **Monster** by
