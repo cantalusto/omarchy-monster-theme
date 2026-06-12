@@ -16,7 +16,7 @@ A dark, noir [Omarchy](https://omarchy.org/) theme inspired by the anime **Monst
 ## Install
 
 ```bash
-omarchy theme install https://github.com/cantalusto/omarchy-monster-theme
+omarchy-theme-install https://github.com/cantalusto/omarchy-monster-theme
 ```
 
 Then pick **Monster** from the theme menu, or:
