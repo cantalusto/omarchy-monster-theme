@@ -36,11 +36,22 @@ When you run `omarchy theme set Monster`, these apply **automatically**:
 - **Cava**, **Steam**, and **VS Code** (built‑in *Red* theme)
 - The wallpapers in `backgrounds/` (the Obluda wallpaper loads as default)
 
-The **boot splash / login logo** (Plymouth + SDDM) is one extra menu step:
-go to **Style → Unlock → Monster**.
-
 The items in [Extras](#extras--install-manually) below are **opt‑in** — they live
 in `extras/` and only take effect when you copy them into `~/.config/` yourself.
+
+## Boot / Unlock screen (Plymouth) — how to enable
+
+> The Monster unlock screen **ships with this theme** (the blood‑red MONSTER
+> logo on boot). It is **not** applied by `omarchy theme set` — and that's normal:
+> the boot splash is set via Plymouth, which needs `sudo`, so Omarchy never
+> changes it automatically for *any* theme. You enable it once, manually:
+
+1. Make sure you have the latest version: `omarchy theme update`
+2. Open the Omarchy menu → **Style → Unlock → Monster**
+3. Enter your password when prompted.
+
+That's it — the next time you boot, the lock/boot screen shows the Monster logo.
+To go back to the stock Omarchy splash, pick **Style → Unlock → Default**.
 
 ## Extras — install manually
 
